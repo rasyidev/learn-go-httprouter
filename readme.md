@@ -31,3 +31,6 @@ go get github.com/julienschmidt/httprouter
 
 ## Panic Handler
 - Menangkap pesan error dan mengirimnya di HTTP Response.
+
+## Not Found Handler
+- Menangkap error not found (404). 
