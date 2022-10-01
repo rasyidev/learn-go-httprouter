@@ -52,7 +52,8 @@ ok      learn-go-httprouter     0.805s
 
 func TestPOSTHttpRouter(t *testing.T) {
 	router := httprouter.New()
-	request := httptest.NewRequest("POST", "/", nil)
+	router.HandlerFunc(http.MethodGet, "/", HomePageHandler)
+	request := httptest.NewRequest(http.MethodPost, "/", nil)
 	recorder := httptest.NewRecorder()
 
 	router.ServeHTTP(recorder, request)
@@ -63,9 +64,9 @@ func TestPOSTHttpRouter(t *testing.T) {
 /*
 $ go test -v -run TestPOSTHttpRouter
 === RUN   TestPOSTHttpRouter
-404 page not found
+Method Not Allowed
 
 --- PASS: TestPOSTHttpRouter (0.00s)
 PASS
-ok      learn-go-httprouter     0.812s
+ok      learn-go-httprouter     0.844s
 */
