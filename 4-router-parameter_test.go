@@ -33,3 +33,26 @@ CartID: 1 | ProductID: 2
 PASS
 ok      learn-go-httprouter     0.845s
 */
+
+func TestRouterParameterCatchAll(t *testing.T) {
+	router := httprouter.New()
+	router.GET("/images/*image", func(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+		text := "Image: " + p.ByName("image")
+		fmt.Fprint(w, text)
+	})
+
+	request := httptest.NewRequest("GET", "/images/image/Rasyidev/Pro.jpg", nil)
+	recorder := httptest.NewRecorder()
+
+	router.ServeHTTP(recorder, request)
+	body, _ := io.ReadAll(recorder.Result().Body)
+	fmt.Println(string(body))
+}
+
+/*
+=== RUN   TestRouterParameterCatchAll
+Image: /image/Rasyidev/Pro.jpg
+--- PASS: TestRouterParameterCatchAll (0.00s)
+PASS
+ok      learn-go-httprouter     0.911s
+*/
