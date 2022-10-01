@@ -2,6 +2,7 @@
 - Salah satu library Open Source untuk http handler di Go Lang
 - Minimalis dan cepat
 - Hanya untuk routing saja
+
 **Instalasi**
 ```bash
 go get github.com/julienschmidt/httprouter
@@ -11,3 +12,16 @@ go get github.com/julienschmidt/httprouter
 ## Params
 - Digunakan untuk mengambil url dinamis
 - Cth: `/product/:id`, dll
+
+## Router Parameter
+### Named Parameter
+- /profiles/:username
+  - /profiles/rasyidev
+  - /profiles/taeriyaki
+  - Not Match: /profiles/, profiles/rasyidev/path
+
+### Catch All Parameter
+- /profiles/*whatever
+  - /profiles/rasyidev
+  - /profiles/taeriyaki/path
+  - Not Match: /profiles
