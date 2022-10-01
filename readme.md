@@ -28,3 +28,6 @@ go get github.com/julienschmidt/httprouter
 
 ## Serve File
 - `(r httprouter) ServeHTTP()`
+
+## Panic Handler
+- Menangkap pesan error dan mengirimnya di HTTP Response.
