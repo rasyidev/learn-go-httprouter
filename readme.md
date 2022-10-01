@@ -25,3 +25,6 @@ go get github.com/julienschmidt/httprouter
   - /profiles/rasyidev
   - /profiles/taeriyaki/path
   - Not Match: /profiles
+
+## Serve File
+- `(r httprouter) ServeHTTP()`
