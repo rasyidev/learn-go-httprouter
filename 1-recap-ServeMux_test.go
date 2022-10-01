@@ -9,7 +9,7 @@ import (
 )
 
 func HomePageHandler(writer http.ResponseWriter, request *http.Request) {
-	fmt.Fprint(writer, "Hello From ServeMux")
+	fmt.Fprint(writer, "Hello, this is Home Page")
 }
 
 func TestHomePageHandler(t *testing.T) {
@@ -39,7 +39,7 @@ func TestGETHomePage(t *testing.T) {
 /*
 $ go test -v -run TestGETHomePage
 === RUN   TestGETHomePage
-Hello From ServeMux
+Hello, this is Home Page
 --- PASS: TestGETHomePage (0.00s)
 PASS
 ok      learn-go-httprouter     0.792s
@@ -57,7 +57,7 @@ func TestPOSTHomePage(t *testing.T) {
 /*
 $ go test -v -run TestPOSTHomePage
 === RUN   TestPOSTHomePage
-Hello From ServeMux
+Hello, this is Home Page
 --- PASS: TestPOSTHomePage (0.00s)
 PASS
 ok      learn-go-httprouter     0.800s
