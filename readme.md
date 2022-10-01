@@ -30,7 +30,10 @@ go get github.com/julienschmidt/httprouter
 - `(r httprouter) ServeHTTP()`
 
 ## Panic Handler
-- Menangkap pesan error dan mengirimnya di HTTP Response.
+- Menangkap pesan error dan mengirimnya di HTTP Response
 
 ## Not Found Handler
-- Menangkap error not found (404). 
+- Menangkap error not found (404)
+
+## Method Not Allowed
+- Menangkap error not allowed
